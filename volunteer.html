@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murr — стать волонтером</title>
+    <link rel="stylesheet" href="./stylesheets/reset.css" />
+    <link rel="stylesheet" href="./stylesheets/fonts.css" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link rel="stylesheet" href="./stylesheets/adaptive.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="menu" aria-label="Основное меню">
+        <a class="logo" href="./index.html" aria-label="Murr">
+          <span class="logo__dot"></span>
+          <span class="logo__text">murr</span>
+        </a>
+
+        <ul class="menu__list">
+          <li><a class="menu__link" href="./index.html#program">мини-игры</a></li>
+          <li><a class="menu__link" href="./index.html#cats">мерч</a></li>
+          <li><a class="menu__link" href="./index.html">пространство</a></li>
+          <li><a class="menu__link" href="./index.html">о нас</a></li>
+          <li><a class="menu__link" href="./index.html#faq">брошюра</a></li>
+          <li><a class="menu__link" href="./index.html#cats">все коты</a></li>
+        </ul>
+
+        <a class="volunteer-button" href="./index.html">
+          <span class="volunteer-button__dot"></span>
+          <span>на главную</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="volunteer">
+      <div class="volunteer__inner">
+        <h1 class="volunteer__title">стать <span class="hero__highlight">волонтером</span></h1>
+        <p class="volunteer__text">
+          Оставьте контакты — мы свяжемся с вами, расскажем о ближайших
+          событиях и подскажем, чем именно можно помочь котикам.
+        </p>
+
+        <form class="volunteer__form" id="volunteerForm">
+          <label class="volunteer__field">
+            <span class="volunteer__label">как вас зовут?</span>
+            <input
+              class="volunteer__input"
+              type="text"
+              name="name"
+              placeholder="Имя"
+              required
+            />
+          </label>
+
+          <label class="volunteer__field">
+            <span class="volunteer__label">телефон или почта</span>
+            <input
+              class="volunteer__input"
+              type="text"
+              name="contact"
+              placeholder="+7 ... или mail@example.com"
+              required
+            />
+          </label>
+
+          <label class="volunteer__field">
+            <span class="volunteer__label">чем хотите помочь?</span>
+            <textarea
+              class="volunteer__input volunteer__textarea"
+              name="message"
+              rows="3"
+              placeholder="Например: выгул, фото котиков, помощь на событиях"
+            ></textarea>
+          </label>
+
+          <button class="volunteer__submit" type="submit">
+            <span class="volunteer-button__dot"></span>
+            <span>отправить заявку</span>
+          </button>
+
+          <p class="volunteer__done" id="volunteerDone" hidden>
+            спасибо! заявка отправлена — скоро свяжемся 🐾
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <script src="./scripts/javascript.js"></script>
+    <script>
+      const form = document.getElementById("volunteerForm");
+      const done = document.getElementById("volunteerDone");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        form.reset();
+        done.hidden = false;
+      });
+    </script>
+  </body>
+</html>

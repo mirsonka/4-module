@@ -1,0 +1,444 @@
+/* ===========================================================
+   Mobile adaptive — main page (index.html)
+   =========================================================== */
+
+/* Mobile nav popup opened by tapping the logo. Hidden by default everywhere;
+   only opened (via JS) on mobile, so it never shows on desktop. */
+.nav-popup {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 50;
+  flex-direction: column;
+  min-width: 190px;
+  padding: 8px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(20, 20, 25, 0.16);
+}
+
+.nav-popup.is-open {
+  display: flex;
+}
+
+.nav-popup__link {
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0a0a0a;
+}
+
+.nav-popup__link:hover {
+  background: #f3f0ff;
+}
+
+@media (max-width: 600px) {
+  /* ---------- Header ---------- */
+  .header {
+    padding-top: 16px;
+  }
+
+  .menu {
+    position: relative;
+    width: 92%;
+    height: auto;
+    padding: 4px 0;
+    border-radius: 0;
+    background: transparent;
+    gap: 0;
+    justify-content: flex-start;
+  }
+
+  .logo {
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .logo__dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .logo__text {
+    font-size: 20px;
+  }
+
+  /* Full nav doesn't fit on a phone — drop it down to just the logo. */
+  .menu__list,
+  .volunteer-button {
+    display: none;
+  }
+
+  /* ---------- Screen 1 / Hero ---------- */
+  .hero {
+    width: 92%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 28px;
+  }
+
+  .hero__content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 26vw;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .hero__text {
+    margin: 10px auto 0;
+    max-width: 300px;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  /* Keep only the first sentence on mobile */
+  .hero__text-extra {
+    display: none;
+  }
+
+  .hero__highlight {
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+
+  .hero__buttons {
+    margin-top: 18px;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero__btn {
+    height: 48px;
+    padding: 0 20px;
+    border-radius: 24px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .hero__btn--secondary {
+    border-width: 1.5px;
+  }
+
+  .hero__btn-heart {
+    width: 14px;
+    height: 13px;
+  }
+
+  /* ---------- Hero card ---------- */
+  .card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.08 / 1;
+    margin: 32px auto 0;
+    padding: 16px;
+    border-radius: 26px;
+  }
+
+  .card__watermark {
+    top: 30%;
+    font-size: 124px;
+  }
+
+  /* Badges (shared by hero card + info cards) */
+  .card__badge {
+    height: 34px;
+    padding: 0 12px;
+    gap: 7px;
+    border-radius: 999px;
+    font-size: 11px;
+  }
+
+  .card__badge--dark {
+    height: 30px;
+  }
+
+  .card__badge-paw {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card__badge-value {
+    font-size: 12px;
+  }
+
+  .card__badge-label {
+    font-size: 11px;
+  }
+
+  .card__badge-heart {
+    width: 10px;
+    height: 9px;
+  }
+
+  .card__badge--top {
+    top: 14px;
+    left: 30%;
+  }
+
+  .card__badge--right {
+    top: 36px;
+    right: -8px;
+  }
+
+  .card__badge--left {
+    top: 116px;
+    left: -8px;
+  }
+
+  .card__cat {
+    bottom: 62px;
+    width: 74%;
+  }
+
+  .card__bottom {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 9px 10px 9px 16px;
+    border-radius: 18px;
+  }
+
+  .card__bottom-name {
+    font-size: 13px;
+  }
+
+  .card__bottom-desc {
+    font-size: 12px;
+  }
+
+  .card__bottom-btn {
+    height: 34px;
+    padding: 0 14px;
+    border-radius: 18px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .card__bottom-heart {
+    width: 13px;
+    height: 12px;
+  }
+
+  /* ---------- Screen 2 / Explain ---------- */
+  .explain {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    padding: 64px 0;
+  }
+
+  .info-card {
+    width: 92%;
+    height: auto;
+    min-height: 150px;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 26px 22px;
+    border-radius: 26px;
+  }
+
+  .info-card__curve-clip {
+    border-radius: 26px;
+  }
+
+  /* No decorative curves on mobile cards */
+  .info-card__curve {
+    display: none;
+  }
+
+  .info-card__title {
+    font-size: 22px;
+  }
+
+  .info-card__text {
+    font-size: 16px;
+    max-width: 88%;
+  }
+
+  /* Fish pops out the top-right of the accent card */
+  .info-card__fish {
+    top: -46px;
+    right: 16px;
+    width: 96px;
+  }
+
+  /* Badges overlap the bottom edge; light cards on the left, accent on the right */
+  .info-card__badge--tr,
+  .info-card__badge--bl {
+    top: auto;
+    bottom: -16px;
+    transform: rotate(4.5deg);
+  }
+
+  .info-card__badge--tr {
+    left: 18px;
+    right: auto;
+  }
+
+  .info-card__badge--bl {
+    right: 18px;
+    left: auto;
+  }
+
+  /* ---------- Screen 3 / Festival program ---------- */
+  /* No sticky pin / reserved height on mobile — the section is only as tall as
+     its content (so there's no empty gap). The scroll animation is driven from
+     each card's position via JS (closest card to the viewport center is active). */
+  .program {
+    min-height: 0;
+  }
+
+  .program__sticky {
+    position: static;
+    min-height: 0;
+    display: block;
+  }
+
+  .program__inner {
+    width: 90%;
+    padding: 32px 0;
+  }
+
+  .program__head {
+    margin-bottom: 28px;
+    padding-left: 24px;
+  }
+
+  .program__title {
+    font-size: 8vw;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    white-space: normal;
+  }
+
+  .program__subtitle {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .program__body {
+    gap: 0;
+  }
+
+  .program__left {
+    gap: 14px;
+  }
+
+  /* No changing cat card on mobile */
+  .program-card {
+    display: none;
+  }
+
+  /* Card heights / gap stay the same as desktop (82 / 180 / 16) — the JS
+     positions the timeline dot from those exact values, so only the inner
+     spacing and type are restyled here. */
+  .event-card {
+    padding: 22px 18px;
+    border-radius: 26px;
+  }
+
+  .event-card.is-active {
+    border-radius: 26px;
+  }
+
+  .event-card__row {
+    gap: 10px;
+  }
+
+  .event-card__time,
+  .event-card__title {
+    font-size: 16px;
+  }
+
+  .event-card__tag {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .event-card__desc {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  /* ---------- Screen 4 / Cats ---------- */
+  .cats__arrows {
+    display: none;
+  }
+
+  .cats__subtitle {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  /* ---------- Screen 5 / FAQ ---------- */
+  .faq__fish {
+    display: none;
+  }
+
+  .faq__answer {
+    font-size: 16px;
+  }
+
+  /* ---------- Footer ---------- */
+  .footer__badge {
+    display: none;
+  }
+
+  /* ---------- Games page ---------- */
+  .games__fish {
+    display: none;
+  }
+
+  /* More leading so the highlight on the 2nd line doesn't touch the 1st line */
+  .games__title {
+    line-height: 1.25;
+  }
+
+  /* ---------- Merch page ---------- */
+  .merch__fish,
+  .merch__fish-bottom {
+    display: none;
+  }
+
+  .product-card__watermark {
+    display: none;
+  }
+
+  /* Taller hero (the "murr / мерч мероприятия" block) — shop grid below is
+     unchanged. */
+  .merch__hero {
+    height: auto;
+    min-height: 80vh;
+  }
+
+  /* Make the purple shop area a bit longer (more room below the cards) */
+  .merch__shop {
+    padding: 28px 0 64px;
+  }
+
+  /* ---------- 404 page ---------- */
+  .notfound__fish {
+    display: none;
+  }
+
+  /* Make both buttons the same width */
+  .notfound__buttons {
+    align-items: stretch;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .notfound__btn {
+    width: 100%;
+  }
+}

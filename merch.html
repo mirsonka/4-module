@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murr — мерч</title>
+    <link rel="stylesheet" href="./stylesheets/reset.css" />
+    <link rel="stylesheet" href="./stylesheets/fonts.css" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link rel="stylesheet" href="./stylesheets/adaptive.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="menu" aria-label="Основное меню">
+        <a class="logo" href="./index.html" aria-label="Murr">
+          <span class="logo__dot"></span>
+          <span class="logo__text">murr</span>
+        </a>
+
+        <ul class="menu__list">
+          <li><a class="menu__link" href="./games.html">мини-игры</a></li>
+          <li><a class="menu__link" href="./merch.html">мерч</a></li>
+          <li><a class="menu__link" href="./index.html">пространство</a></li>
+          <li><a class="menu__link" href="./index.html#about">о нас</a></li>
+          <li><a class="menu__link" href="./index.html#faq">брошюра</a></li>
+          <li><a class="menu__link" href="./index.html#cats">все коты</a></li>
+        </ul>
+
+        <a class="volunteer-button" href="./volunteer.html">
+          <span class="volunteer-button__dot"></span>
+          <span>стать волонтером</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="merch">
+      <section class="merch__hero">
+        <img
+          class="merch__fish merch__fish--green"
+          src="./img/fish-green-5.png"
+          alt=""
+        />
+        <img
+          class="merch__fish merch__fish--purple"
+          src="./img/fish-purple-5.png"
+          alt=""
+        />
+        <h1 class="merch__title">murr</h1>
+        <p class="merch__subtitle">мерч мероприятия</p>
+      </section>
+
+      <section class="merch__shop">
+        <div class="merch__grid" id="merchGrid"></div>
+        <img
+          class="merch__fish-bottom"
+          src="./img/fish-green-5.png"
+          alt=""
+        />
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__note">
+          Играйте, знакомьтесь с питомцами<br />
+          и помогайте котикам найти дом.
+        </p>
+      </div>
+
+      <div class="footer__brand">
+        <span class="footer__murr">MURR</span>
+        <span class="footer__badge footer__badge--purple">поддержка приютов</span>
+        <span class="footer__badge footer__badge--lime">благотворительность</span>
+        <span class="footer__badge footer__badge--dark">волонтерство</span>
+      </div>
+    </footer>
+
+    <script src="./scripts/javascript.js"></script>
+  </body>
+</html>

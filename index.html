@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murr</title>
+    <link rel="stylesheet" href="./stylesheets/reset.css" />
+    <link rel="stylesheet" href="./stylesheets/fonts.css" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link rel="stylesheet" href="./stylesheets/adaptive.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="menu" aria-label="Основное меню">
+        <a class="logo" href="/" aria-label="Murr">
+          <span class="logo__dot"></span>
+          <span class="logo__text">murr</span>
+        </a>
+
+        <ul class="menu__list">
+          <li><a class="menu__link" href="./games.html">мини-игры</a></li>
+          <li><a class="menu__link" href="./merch.html">мерч</a></li>
+          <li><a class="menu__link" href="#">пространство</a></li>
+          <li><a class="menu__link" href="#about">о нас</a></li>
+          <li><a class="menu__link" href="#">брошюра</a></li>
+          <li><a class="menu__link" href="#cats">все коты</a></li>
+        </ul>
+
+        <a class="volunteer-button" href="./volunteer.html">
+          <span class="volunteer-button__dot"></span>
+          <span>стать волонтером</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <h1 class="hero__title">murr</h1>
+          <p class="hero__text">
+            murr — фестиваль помощи бездомным животным.<span class="hero__text-extra">
+            приходите на мероприятия, играйте в игры и
+            встречайте тех, кто <span class="hero__highlight">ждет дома.</span>
+            участие — уже помощь.</span>
+          </p>
+          <div class="hero__buttons">
+            <a class="hero__btn hero__btn--primary" href="#">
+              <img class="hero__btn-heart" src="./img/heart.svg" alt="" />
+              <span>помочь сейчас</span>
+            </a>
+            <a class="hero__btn hero__btn--secondary" href="#">
+              посмотреть котов
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card__watermark">murr</span>
+
+          <div class="card__badge card__badge--dark card__badge--top">
+            <span>помогаем уже 20 лет</span>
+            <img class="card__badge-heart" src="./img/heart-white.svg" alt="" />
+          </div>
+
+          <div class="card__badge card__badge--light card__badge--right">
+            <img class="card__badge-paw" src="./img/paw-black.svg" alt="" />
+            <div class="card__badge-info">
+              <span class="card__badge-value">4 приюта</span>
+              <span class="card__badge-label">партнера</span>
+            </div>
+          </div>
+
+          <div class="card__badge card__badge--light card__badge--left">
+            <img class="card__badge-paw" src="./img/paw-white.svg" alt="" />
+            <div class="card__badge-info">
+              <span class="card__badge-value">200 рук</span>
+              <span class="card__badge-label">волонтеры</span>
+            </div>
+          </div>
+
+          <img class="card__cat" src="./img/cat.png" alt="Кот Маша" />
+
+          <div class="card__bottom">
+            <div class="card__bottom-info">
+              <span class="card__bottom-name">Маша</span>
+              <span class="card__bottom-desc">4 года, ищет дом</span>
+            </div>
+            <a class="card__bottom-btn" href="#">
+              <span>взять кота</span>
+              <img class="card__bottom-heart" src="./img/heart-black.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="explain" id="about">
+        <article class="info-card info-card--light">
+          <span class="info-card__curve-clip">
+            <img
+              class="info-card__curve info-card__curve--left"
+              src="./img/curve-white-left.svg"
+              alt=""
+            />
+          </span>
+          <div class="card__badge card__badge--light info-card__badge info-card__badge--tr">
+            <img class="card__badge-paw" src="./img/paw-white.svg" alt="" />
+            <div class="card__badge-info">
+              <span class="card__badge-value">200 рук</span>
+              <span class="card__badge-label">волонтеры</span>
+            </div>
+          </div>
+          <h2 class="info-card__title">Кто мы?</h2>
+          <p class="info-card__text">
+            Команда волонтеров, которые стремяться найти котикам дом.
+          </p>
+        </article>
+
+        <article class="info-card info-card--accent">
+          <span class="info-card__curve-clip">
+            <img
+              class="info-card__curve info-card__curve--middle"
+              src="./img/curve-middle.svg"
+              alt=""
+            />
+          </span>
+          <div class="card__badge card__badge--light info-card__badge info-card__badge--bl">
+            <img class="card__badge-paw" src="./img/paw-white.svg" alt="" />
+            <div class="card__badge-info">
+              <span class="card__badge-value">80 хвостов</span>
+              <span class="card__badge-label">ждут дом</span>
+            </div>
+          </div>
+          <img class="info-card__fish" src="./img/fish-green.png" alt="" />
+          <h2 class="info-card__title">Как помочь?</h2>
+          <p class="info-card__text">
+            Играй, участвуй в событиях и поддерживай котов.
+          </p>
+        </article>
+
+        <article class="info-card info-card--light">
+          <span class="info-card__curve-clip">
+            <img
+              class="info-card__curve info-card__curve--right"
+              src="./img/curve-white-right.svg"
+              alt=""
+            />
+          </span>
+          <div class="card__badge card__badge--light info-card__badge info-card__badge--tr">
+            <img class="card__badge-paw" src="./img/paw-white.svg" alt="" />
+            <div class="card__badge-info">
+              <span class="card__badge-value">1 билет</span>
+              <span class="card__badge-label">уже помощь</span>
+            </div>
+          </div>
+          <h2 class="info-card__title">Что дальше?</h2>
+          <p class="info-card__text">
+            Больше заботы, больше встреч, больше котов дома.
+          </p>
+        </article>
+      </section>
+      <section class="program" id="program">
+        <div class="program__sticky">
+          <div class="program__inner">
+            <header class="program__head">
+              <h2 class="program__title">программа фестиваля</h2>
+              <p class="program__subtitle">
+                Выберите событие и приходите помогать, играть<br />
+                и знакомиться с теми, кто ждет дома.
+              </p>
+            </header>
+
+            <div class="program__body">
+              <div class="program__left">
+                <div class="timeline" aria-hidden="true">
+                  <span class="timeline__track"></span>
+                  <span class="timeline__progress" id="timelineProgress"></span>
+                  <span class="timeline__dot" id="timelineDot"></span>
+                </div>
+                <ul class="program__events" id="programEvents"></ul>
+              </div>
+
+              <aside class="program-card" id="programCard">
+                <span class="program-card__watermark">murr</span>
+                <img class="program-card__photo" id="programPhoto" src="./img/cat-3.png" alt="кот" />
+                <div class="program-card__plate">
+                  <div class="program-card__info">
+                    <span class="program-card__name">Вася</span>
+                    <span class="program-card__desc">4 года, ищет дом</span>
+                  </div>
+                  <a class="program-card__btn" href="#">
+                    <span>участвовать</span>
+                    <img
+                      class="program-card__heart"
+                      src="./img/heart-black.svg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cats" id="cats">
+        <div class="cats__inner">
+          <header class="cats__head">
+            <div class="cats__heading">
+              <h2 class="cats__title">
+                котики ищут <span class="cats__highlight">дом</span>
+              </h2>
+              <p class="cats__subtitle">
+                познакомьтесь с теми, кто ждет своего<br />человека
+              </p>
+            </div>
+
+            <div class="cats__arrows">
+              <button
+                class="cats__arrow cats__arrow--prev"
+                id="catsPrev"
+                type="button"
+                aria-label="Предыдущие"
+              ></button>
+              <button
+                class="cats__arrow cats__arrow--next"
+                id="catsNext"
+                type="button"
+                aria-label="Следующие"
+              ></button>
+            </div>
+          </header>
+
+          <ul class="cats__track" id="catsTrack"></ul>
+        </div>
+      </section>
+
+      <section class="faq" id="faq">
+        <img
+          class="faq__fish faq__fish--purple"
+          src="./img/fish-purple-5.png"
+          alt=""
+        />
+        <img
+          class="faq__fish faq__fish--green"
+          src="./img/fish-green-5.png"
+          alt=""
+        />
+        <div class="faq__container">
+          <h2 class="faq__title">частые вопросы:</h2>
+          <div class="faq__list" id="faqList"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__note">
+          Играйте, знакомьтесь с питомцами<br />
+          и помогайте котикам найти дом.
+        </p>
+      </div>
+
+      <div class="footer__brand">
+        <span class="footer__murr">MURR</span>
+        <span class="footer__badge footer__badge--purple">поддержка приютов</span>
+        <span class="footer__badge footer__badge--lime">благотворительность</span>
+        <span class="footer__badge footer__badge--dark">волонтерство</span>
+      </div>
+    </footer>
+
+    <script src="./scripts/javascript.js"></script>
+  </body>
+</html>

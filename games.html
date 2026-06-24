@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murr — мини-игры</title>
+    <link rel="stylesheet" href="./stylesheets/reset.css" />
+    <link rel="stylesheet" href="./stylesheets/fonts.css" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link rel="stylesheet" href="./stylesheets/adaptive.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="menu" aria-label="Основное меню">
+        <a class="logo" href="./index.html" aria-label="Murr">
+          <span class="logo__dot"></span>
+          <span class="logo__text">murr</span>
+        </a>
+
+        <ul class="menu__list">
+          <li><a class="menu__link" href="./games.html">мини-игры</a></li>
+          <li><a class="menu__link" href="./index.html#cats">мерч</a></li>
+          <li><a class="menu__link" href="./index.html">пространство</a></li>
+          <li><a class="menu__link" href="./index.html#about">о нас</a></li>
+          <li><a class="menu__link" href="./index.html#faq">брошюра</a></li>
+          <li><a class="menu__link" href="./index.html#cats">все коты</a></li>
+        </ul>
+
+        <a class="volunteer-button" href="./volunteer.html">
+          <span class="volunteer-button__dot"></span>
+          <span>стать волонтером</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="games">
+      <img class="games__fish" src="./img/fish-green-5.png" alt="" />
+      <div class="games__inner">
+        <header class="games__head">
+          <h1 class="games__title">
+            мини-игры с <span class="hero__highlight">котиками</span>
+          </h1>
+          <p class="games__subtitle">
+            Играйте, знакомьтесь с питомцами и помогайте<br />
+            котикам найти дом.
+          </p>
+        </header>
+
+        <div class="games__list">
+          <article class="game-card">
+            <img
+              class="game-card__img"
+              src="./img/illustration-1.svg"
+              alt="Игра 1"
+            />
+            <div class="game-card__head">
+              <h2 class="game-card__title">игра 1</h2>
+              <span class="game-card__badge game-card__badge--purple">
+                мини-игра
+              </span>
+            </div>
+            <p class="game-card__text">
+              murr — фестиваль помощи бездомным животным. приходите на
+              мероприятия, играйте в игры и встречайте тех, кто ждет дома.
+              участие — уже помощь.
+            </p>
+            <a class="game-card__btn" href="#">
+              <span>играть</span>
+              <span class="game-card__arrow">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M5 12h13M12 5l7 7-7 7"
+                    fill="none"
+                    stroke="#0a0a0a"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </a>
+          </article>
+
+          <article class="game-card">
+            <img
+              class="game-card__img"
+              src="./img/illustration-2.svg"
+              alt="Игра 2"
+            />
+            <div class="game-card__head">
+              <h2 class="game-card__title">игра 2</h2>
+              <span class="game-card__badge game-card__badge--lime">
+                мини-игра
+              </span>
+            </div>
+            <p class="game-card__text">
+              murr — фестиваль помощи бездомным животным. приходите на
+              мероприятия, играйте в игры и встречайте тех, кто ждет дома.
+              участие — уже помощь.
+            </p>
+            <a class="game-card__btn" href="#">
+              <span>играть</span>
+              <span class="game-card__arrow">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M5 12h13M12 5l7 7-7 7"
+                    fill="none"
+                    stroke="#0a0a0a"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__note">
+          Играйте, знакомьтесь с питомцами<br />
+          и помогайте котикам найти дом.
+        </p>
+      </div>
+
+      <div class="footer__brand">
+        <span class="footer__murr">MURR</span>
+        <span class="footer__badge footer__badge--purple">поддержка приютов</span>
+        <span class="footer__badge footer__badge--lime">благотворительность</span>
+        <span class="footer__badge footer__badge--dark">волонтерство</span>
+      </div>
+    </footer>
+
+    <script src="./scripts/javascript.js"></script>
+  </body>
+</html>
