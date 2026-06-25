@@ -441,4 +441,106 @@
   .notfound__btn {
     width: 100%;
   }
+
+  /* ---------- Space page / hero ---------- */
+  .space-hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding-top: 20px;
+  }
+
+  .space-hero__content {
+    max-width: 100%;
+  }
+
+  .space-hero__title {
+    font-size: 12vw;
+    line-height: 1.05;
+    letter-spacing: -1px;
+  }
+
+  .space-hero__highlight {
+    border-radius: 6px;
+    padding: 0 8px;
+  }
+
+  .space-hero__text {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .space-hero__content .hero__buttons {
+    margin-top: 22px;
+    justify-content: flex-start;
+  }
+
+  .space-hero__card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    transform: rotate(2deg);
+    border-radius: 28px;
+  }
+
+  .space-hero__watermark {
+    top: 9%;
+    font-size: 34vw;
+  }
+
+  .space-hero__fish {
+    width: 88%;
+  }
+
+  /* No tilt on the video and location blocks on mobile */
+  .space-video__frame,
+  .space-loc-card {
+    transform: none;
+  }
+
+  /* Center location cards horizontally (and keep them within the screen) */
+  .space-locations__col {
+    align-items: center;
+  }
+
+  .space-loc-card,
+  .space-loc-card--dark {
+    align-self: center;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 356px;
+    height: auto;
+    aspect-ratio: 356 / 335;
+  }
+}
+
+/* ===========================================================
+   Tablet — keep the two-column locations layout
+   (location 1 + text left, location 2 + text right & lower)
+   =========================================================== */
+@media (min-width: 601px) and (max-width: 768px) {
+  .space-locations {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4vw;
+  }
+
+  .space-locations__col {
+    flex: 0 0 46%;
+  }
+
+  /* Right column (location 2 + its text) sits a bit lower */
+  .space-locations__col--right {
+    margin-top: 14vw;
+  }
+
+  .space-loc-card,
+  .space-loc-card--dark {
+    width: 100%;
+    max-width: 356px;
+    height: auto;
+    aspect-ratio: 356 / 335;
+  }
 }

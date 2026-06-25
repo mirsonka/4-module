@@ -8,7 +8,7 @@ if (navLogo) {
   popup.innerHTML = `
     <a class="nav-popup__link" href="./games.html">мини-игры</a>
     <a class="nav-popup__link" href="./merch.html">мерч</a>
-    <a class="nav-popup__link" href="./index.html">пространство</a>
+    <a class="nav-popup__link" href="./space.html">пространство</a>
     <a class="nav-popup__link" href="./404.html">журнал</a>
   `;
   navLogo.insertAdjacentElement("afterend", popup);
