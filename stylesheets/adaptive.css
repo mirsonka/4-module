@@ -387,12 +387,17 @@
     font-size: 18px;
   }
 
+  /* Hide the grey subtitle on mobile — it ran behind the button */
   .cat-card__desc {
-    font-size: 14px;
+    display: none;
   }
 
+  /* Slightly smaller button so the cat's name fits next to it */
   .cat-card__btn {
-    font-size: 15px;
+    height: 44px;
+    padding: 0 14px;
+    gap: 6px;
+    font-size: 14px;
   }
 
   /* ---------- Screen 5 / FAQ ---------- */
