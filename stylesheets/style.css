@@ -1,7 +1,6 @@
 html {
   scroll-behavior: smooth;
-  /* clip (not hidden) stops horizontal scroll without creating a scroll
-     container — so it doesn't break position: sticky on the program page */
+
   overflow-x: clip;
 }
 
@@ -100,8 +99,6 @@ body {
   background: #d5f27c;
 }
 
-/* ===== Hero ===== */
-
 .hero {
   width: 89.1667vw;
   margin: 0 auto;
@@ -179,8 +176,6 @@ body {
   width: 1.1111vw;
   height: 1.0417vw;
 }
-
-/* ===== Card ===== */
 
 .card {
   position: relative;
@@ -379,8 +374,6 @@ body {
   transform: scale(1.05);
 }
 
-/* ===== Screen 2 / Explain ===== */
-
 .explain {
   height: 48.0556vw;
   display: flex;
@@ -502,8 +495,6 @@ body {
   transform: rotate(4.5deg);
 }
 
-/* ===== Screen 3 / Festival program ===== */
-
 :root {
   --color-purple: #8f78f7;
   --color-lime: #d5f27c;
@@ -517,7 +508,7 @@ body {
 
 .program {
   position: relative;
-  /* extra height creates the scroll distance that drives the timeline */
+
   min-height: 260vh;
   background: #ffffff;
 }
@@ -533,24 +524,24 @@ body {
 .program__inner {
   width: 89.1667vw;
   margin: 0 auto;
-  padding: 64px 0;
+  padding: 4.4444vw 0;
 }
 
 .program__head {
-  margin-bottom: 56px;
+  margin-bottom: 3.8889vw;
 }
 
 .program__title {
   font-size: 6.1111vw;
   line-height: 0.95;
   font-weight: 800;
-  letter-spacing: -3px;
+  letter-spacing: -0.2083vw;
   white-space: nowrap;
   color: var(--color-black);
 }
 
 .program__subtitle {
-  margin-top: 28px;
+  margin-top: 1.9444vw;
   font-size: 1.6667vw;
   line-height: 1.4;
   font-weight: 400;
@@ -560,21 +551,19 @@ body {
 .program__body {
   display: flex;
   align-items: flex-start;
-  gap: 48px;
+  gap: 3.3333vw;
 }
 
 .program__left {
   flex: 1 1 auto;
   display: flex;
-  gap: 28px;
+  gap: 1.9444vw;
 }
-
-/* --- Timeline --- */
 
 .timeline {
   position: relative;
-  flex: 0 0 18px;
-  width: 18px;
+  flex: 0 0 1.25vw;
+  width: 1.25vw;
   align-self: stretch;
 }
 
@@ -583,7 +572,7 @@ body {
   position: absolute;
   left: 50%;
   top: 0;
-  width: 4px;
+  width: 0.2778vw;
   border-radius: var(--radius-pill);
   transform: translateX(-50%);
 }
@@ -604,8 +593,8 @@ body {
   position: absolute;
   left: 50%;
   top: 0;
-  width: 18px;
-  height: 18px;
+  width: 1.25vw;
+  height: 1.25vw;
   border-radius: 50%;
   background: #ffffff;
   border: 4px solid var(--color-purple);
@@ -614,23 +603,21 @@ body {
   will-change: transform;
 }
 
-/* --- Event cards --- */
-
 .program__events {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1.1111vw;
 }
 
 .event-card {
-  height: 82px;
+  height: 5.6944vw;
   overflow: hidden;
-  padding: 24px 36px;
+  padding: 1.6667vw 2.5vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 12px;
+  gap: 0.8333vw;
   border-radius: var(--radius-lg);
   background: #ffffff;
   border: 1px solid var(--color-gray);
@@ -646,7 +633,7 @@ body {
 }
 
 .event-card.is-active {
-  height: 180px;
+  height: 12.5vw;
   background: var(--color-purple);
   border-color: var(--color-purple);
   transform: scale(1);
@@ -656,7 +643,7 @@ body {
 .event-card__row {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 1.6667vw;
 }
 
 .event-card__time {
@@ -676,7 +663,7 @@ body {
 .event-card__tag {
   margin-left: auto;
   flex: 0 0 auto;
-  padding: 8px 18px;
+  padding: 0.5556vw 1.25vw;
   border-radius: var(--radius-pill);
   font-size: 1.1111vw;
   font-weight: 600;
@@ -694,7 +681,7 @@ body {
   font-weight: 400;
   color: #ffffff;
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(0.6944vw);
   transition:
     opacity 0.5s ease,
     transform 0.5s ease;
@@ -714,8 +701,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* --- Right card --- */
 
 .program-card {
   position: relative;
@@ -742,7 +727,7 @@ body {
 .program-card__photo {
   position: absolute;
   left: 0;
-  bottom: 100px;
+  bottom: 6.9444vw;
   width: 100%;
   height: 85.8%;
   object-fit: contain;
@@ -755,14 +740,14 @@ body {
 .program-card__plate {
   position: absolute;
   z-index: 2;
-  left: 28px;
-  right: 28px;
-  bottom: 28px;
+  left: 1.9444vw;
+  right: 1.9444vw;
+  bottom: 1.9444vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 16px 16px 16px 28px;
+  gap: 1.1111vw;
+  padding: 1.1111vw 1.1111vw 1.1111vw 1.9444vw;
   border-radius: var(--radius-pill);
   background: #ffffff;
 }
@@ -770,7 +755,7 @@ body {
 .program-card__info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0.1389vw;
 }
 
 .program-card__name {
@@ -788,10 +773,10 @@ body {
 .program-card__btn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.6944vw;
   flex: 0 0 auto;
-  height: 56px;
-  padding: 0 26px;
+  height: 3.8889vw;
+  padding: 0 1.8056vw;
   border-radius: var(--radius-pill);
   background: var(--color-lime);
   font-size: 1.1111vw;
@@ -806,8 +791,8 @@ body {
 }
 
 .program-card__heart {
-  width: 18px;
-  height: 16px;
+  width: 1.25vw;
+  height: 1.1111vw;
 }
 
 .program-card--pulse {
@@ -825,8 +810,6 @@ body {
   }
 }
 
-/* --- Adaptive --- */
-
 @media (max-width: 1024px) {
   .program__title {
     font-size: 72px;
@@ -843,6 +826,10 @@ body {
 
   .program-card__watermark {
     font-size: 90px;
+  }
+
+  .program-card {
+    display: none;
   }
 }
 
@@ -888,10 +875,8 @@ body {
   }
 }
 
-/* ===== Screen 4 / Cats carousel ===== */
-
 .cats {
-  padding: 100px 0;
+  padding: 6.9444vw 0;
   background: #ffffff;
 }
 
@@ -904,27 +889,27 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 32px;
-  margin-bottom: 48px;
+  gap: 2.2222vw;
+  margin-bottom: 3.3333vw;
 }
 
 .cats__title {
   font-size: 6.1111vw;
   line-height: 0.95;
   font-weight: 800;
-  letter-spacing: -2px;
+  letter-spacing: -0.1389vw;
   white-space: nowrap;
   color: var(--color-black);
 }
 
 .cats__highlight {
   background: var(--color-lime);
-  border-radius: 8px;
-  padding: 0 12px;
+  border-radius: 0.5556vw;
+  padding: 0 0.8333vw;
 }
 
 .cats__subtitle {
-  margin-top: 24px;
+  margin-top: 1.6667vw;
   font-size: 1.6667vw;
   line-height: 1.35;
   font-weight: 400;
@@ -933,14 +918,14 @@ body {
 
 .cats__arrows {
   display: flex;
-  gap: 16px;
+  gap: 1.1111vw;
   flex: 0 0 auto;
 }
 
 .cats__arrow {
   position: relative;
-  width: 56px;
-  height: 56px;
+  width: 3.8889vw;
+  height: 3.8889vw;
   border-radius: 50%;
   background: #ffffff;
   border: 1px solid var(--color-gray);
@@ -956,8 +941,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 10px;
-  height: 10px;
+  width: 0.6944vw;
+  height: 0.6944vw;
   border-left: 2px solid var(--color-black);
   border-bottom: 2px solid var(--color-black);
 }
@@ -980,31 +965,27 @@ body {
   transform: none;
 }
 
-/* --- Track --- */
-
 .cats__track {
   display: flex;
-  gap: 24px;
+  gap: 1.6667vw;
   overflow-x: auto;
   scrollbar-width: none;
-  /* room for the tilted active card's corners (overflow-x: auto also clips Y) */
-  padding: 12px 0;
+
+  padding: 0.8333vw 0;
 }
 
 .cats__track::-webkit-scrollbar {
   display: none;
 }
 
-/* --- Cat card --- */
-
 .cat-card {
   position: relative;
-  flex: 0 0 calc((100% - 48px) / 3);
+  flex: 0 0 calc((100% - 3.3333vw) / 3);
   aspect-ratio: 1 / 1.06;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 22px;
+  padding: 1.5278vw;
   border-radius: var(--radius-lg);
   background: #f7f7f7;
   overflow: hidden;
@@ -1029,8 +1010,6 @@ body {
   transition: color 0.4s ease;
 }
 
-/* During the seamless loop jump we swap the active card between identical
-   copies — suppress transitions so the color/tilt don't visibly re-fire. */
 .cats__track.is-wrapping .cat-card,
 .cats__track.is-wrapping .cat-card__watermark {
   transition: none;
@@ -1058,7 +1037,7 @@ body {
 .cat-card__photo {
   position: absolute;
   left: 0;
-  bottom: 100px;
+  bottom: 6.9444vw;
   width: 100%;
   height: 85.8%;
   object-fit: contain;
@@ -1079,9 +1058,9 @@ body {
 .cat-card__badge {
   display: flex;
   align-items: center;
-  gap: 10px;
-  height: 48px;
-  padding: 0 18px 0 8px;
+  gap: 0.6944vw;
+  height: 3.3333vw;
+  padding: 0 1.25vw 0 0.5556vw;
   border-radius: var(--radius-pill);
   background: #ffffff;
   font-size: 1.1111vw;
@@ -1090,8 +1069,8 @@ body {
 }
 
 .cat-card__paw {
-  width: 32px;
-  height: 32px;
+  width: 2.2222vw;
+  height: 2.2222vw;
   border-radius: 50%;
 }
 
@@ -1099,8 +1078,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 3.3333vw;
+  height: 3.3333vw;
   flex: 0 0 auto;
   border: none;
   border-radius: 50%;
@@ -1114,8 +1093,8 @@ body {
 }
 
 .cat-card__fav img {
-  width: 20px;
-  height: 18px;
+  width: 1.3889vw;
+  height: 1.25vw;
 }
 
 .cat-card__plate {
@@ -1124,8 +1103,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 14px 14px 14px 24px;
+  gap: 0.8333vw;
+  padding: 0.9722vw 0.9722vw 0.9722vw 1.6667vw;
   border-radius: var(--radius-pill);
   background: #ffffff;
 }
@@ -1133,7 +1112,7 @@ body {
 .cat-card__info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0.1389vw;
   min-width: 0;
 }
 
@@ -1153,10 +1132,10 @@ body {
 .cat-card__btn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.6944vw;
   flex: 0 0 auto;
-  height: 52px;
-  padding: 0 22px;
+  height: 3.6111vw;
+  padding: 0 1.5278vw;
   border-radius: var(--radius-pill);
   background: var(--color-lime);
   font-size: 1.1111vw;
@@ -1171,11 +1150,9 @@ body {
 }
 
 .cat-card__heart {
-  width: 18px;
-  height: 16px;
+  width: 1.25vw;
+  height: 1.1111vw;
 }
-
-/* --- Adaptive --- */
 
 @media (max-width: 1024px) {
   .cats {
@@ -1191,7 +1168,7 @@ body {
   }
 
   .cat-card {
-    flex: 0 0 calc((100% - 24px) / 2);
+    flex: 0 0 calc((100% - 1.6667vw) / 2);
   }
 }
 
@@ -1215,8 +1192,6 @@ body {
     flex: 0 0 80%;
   }
 }
-
-/* ===== Screen 5 / FAQ ===== */
 
 .faq {
   position: relative;
@@ -1344,8 +1319,6 @@ body {
   transform: translateY(0);
 }
 
-/* --- Adaptive --- */
-
 @media (max-width: 1024px) {
   .faq {
     padding: 72px 0;
@@ -1397,8 +1370,6 @@ body {
     font-size: 15px;
   }
 }
-
-/* ===== Footer ===== */
 
 .footer {
   position: relative;
@@ -1476,8 +1447,6 @@ body {
   animation: wave-center 4s linear infinite -2.6s;
 }
 
-/* Same wave as the first screen, but keeps the dark badge horizontally
-   centered (translateX(-50%)) while it bobs. */
 @keyframes wave-center {
   0% {
     transform: translate(-50%, -1vw) rotate(0deg);
@@ -1507,8 +1476,6 @@ body {
     transform: translate(-50%, -1vw) rotate(0deg);
   }
 }
-
-/* --- Adaptive --- */
 
 @media (max-width: 1024px) {
   .footer__murr {
@@ -1575,8 +1542,6 @@ body {
     top: 130px;
   }
 }
-
-/* ===== Volunteer page ===== */
 
 .volunteer {
   width: 89.1667vw;
@@ -1691,8 +1656,6 @@ body {
     font-size: 18px;
   }
 }
-
-/* ===== 404 page ===== */
 
 .notfound {
   position: relative;
@@ -1817,8 +1780,6 @@ body {
     width: 22vw;
   }
 }
-
-/* ===== Games page ===== */
 
 .games {
   position: relative;
@@ -1964,8 +1925,6 @@ body {
   height: 1.3889vw;
 }
 
-/* --- Games page: mobile --- */
-
 @media (max-width: 768px) {
   .games {
     width: auto;
@@ -2041,8 +2000,6 @@ body {
   }
 }
 
-/* ===== Merch page ===== */
-
 .merch__hero {
   position: relative;
   height: 47.7vw;
@@ -2117,8 +2074,6 @@ body {
   z-index: 3;
 }
 
-/* --- Product card --- */
-
 .product-card {
   position: relative;
   aspect-ratio: 1 / 1.12;
@@ -2176,7 +2131,6 @@ body {
   scale: 1.6;
 }
 
-/* Gentle rocking of the product on card hover: 0 → -2.26° → 0 → 2.26° → 0 */
 @keyframes product-tilt {
   0% {
     rotate: 0deg;
@@ -2261,8 +2215,6 @@ body {
   height: 0.9vw;
 }
 
-/* --- Adaptive --- */
-
 @media (max-width: 768px) {
   .merch__title {
     font-size: 22vw;
@@ -2325,8 +2277,6 @@ body {
     height: 12px;
   }
 }
-
-/* ===== Space page ===== */
 
 .space {
   width: 89.1667vw;
@@ -2529,8 +2479,6 @@ body {
   animation: wave 4s linear infinite -3s;
 }
 
-/* --- Locations --- */
-
 .space-locations {
   position: relative;
   padding: 6vw 0 8vw;
@@ -2605,7 +2553,7 @@ body {
   margin-top: 3vw;
   width: 24.7222vw;
   height: 23.2639vw;
-  /* aspect-ratio: 4 / 3; */
+
   border-radius: 1.6667vw;
   background: #f4f4f4;
   transform: rotate(-3deg);
@@ -2619,7 +2567,6 @@ body {
   background: #1a1320;
 }
 
-/* Tilt to opposite sides on hover */
 .space-loc-card:hover {
   transform: rotate(-6deg);
 }

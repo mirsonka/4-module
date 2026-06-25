@@ -1,5 +1,3 @@
-/* ===== Mobile nav popup (tap the logo) ===== */
-
 const navLogo = document.querySelector(".header .logo");
 
 if (navLogo) {
@@ -16,21 +14,18 @@ if (navLogo) {
   const navMq = window.matchMedia("(max-width: 600px)");
 
   navLogo.addEventListener("click", (e) => {
-    // On desktop the logo keeps its normal "go home" behaviour.
+
     if (!navMq.matches) return;
     e.preventDefault();
     popup.classList.toggle("is-open");
   });
 
-  // Close when tapping outside the popup / logo.
   document.addEventListener("click", (e) => {
     if (!popup.classList.contains("is-open")) return;
     if (e.target.closest(".nav-popup") || e.target.closest(".logo")) return;
     popup.classList.remove("is-open");
   });
 }
-
-/* ===== Festival program ===== */
 
 const events = [
   {
@@ -74,7 +69,6 @@ if (section) {
   const nameEl = cardEl.querySelector(".program-card__name");
   const descEl = cardEl.querySelector(".program-card__desc");
 
-  // Cat shown in the right card for each event (by index).
   const eventCats = [
     { photo: "./img/cat-3.png", name: "Вася", age: "4 года" },
     { photo: "./img/cat-2.png", name: "Пончик", age: "1.5 лет" },
@@ -82,7 +76,6 @@ if (section) {
     { photo: "./img/cat-5.png", name: "Муся", age: "6 лет" },
   ];
 
-  // --- Render cards from the data array ---
   const cards = events.map((event, index) => {
     const li = document.createElement("li");
     li.className = "event-card" + (index === 0 ? " is-active" : "");
@@ -102,17 +95,18 @@ if (section) {
 
   let activeIndex = 0;
 
-  // Card heights are fixed in CSS, so the active card's center can be derived
-  // analytically — no per-frame getBoundingClientRect (which would force a
-  // synchronous layout on every scroll frame and cause stutter).
-  const COLLAPSED = 82;
-  const EXPANDED = 180;
-  const GAP = 16;
+  function metrics() {
 
-  // Place the dot / progress at the center of the active card. CSS transitions
-  // glide them, so this only needs to run once per active change.
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      return { collapsed: 82, expanded: 180, gap: 16 };
+    }
+    const f = window.innerWidth / 1440;
+    return { collapsed: 82 * f, expanded: 180 * f, gap: 16 * f };
+  }
+
   function positionTimeline() {
-    const center = activeIndex * (COLLAPSED + GAP) + EXPANDED / 2;
+    const m = metrics();
+    const center = activeIndex * (m.collapsed + m.gap) + m.expanded / 2;
     dotEl.style.transform = `translate(-50%, calc(${center}px - 50%))`;
     progressEl.style.height = `${center}px`;
   }
@@ -125,7 +119,6 @@ if (section) {
 
     positionTimeline();
 
-    // Swap the cat (photo + name + age) for the active event.
     const cat = eventCats[index];
     if (cat) {
       photoEl.src = cat.photo;
@@ -133,20 +126,14 @@ if (section) {
       descEl.textContent = `${cat.age}, ищет дом`;
     }
 
-    // Re-trigger the right card's pulse animation.
     cardEl.classList.remove("program-card--pulse");
     void cardEl.offsetWidth;
     cardEl.classList.add("program-card--pulse");
   }
 
-  // --- Scroll progress drives which card is active ---
   let ticking = false;
 
-  // On mobile the section is a normal (non-sticky) block, so instead of mapping
-  // sticky scroll-progress to an index we just activate the card whose center is
-  // closest to the middle of the viewport. This keeps the scroll animation with
-  // no extra reserved height (and therefore no empty gap before the next block).
-  const mobileMq = window.matchMedia("(max-width: 600px)");
+  const mobileMq = window.matchMedia("(max-width: 1024px)");
 
   function update() {
     ticking = false;
@@ -193,11 +180,10 @@ if (section) {
 
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Initial placement.
+  window.addEventListener("resize", positionTimeline);
+
   positionTimeline();
 }
-
-/* ===== Cats carousel ===== */
 
 const cats = [
   { name: "Котлета", age: "2 года", photo: "./img/cat-1.png" },
@@ -243,38 +229,30 @@ if (catsTrack) {
     return li;
   }
 
-  // Render 3 identical copies so the carousel can loop seamlessly: we keep the
-  // scroll parked in the middle copy and jump by one copy-width when it drifts.
   const COPIES = 3;
   for (let c = 0; c < COPIES; c++) {
     cats.forEach((cat) => catsTrack.appendChild(buildCard(cat)));
   }
   const cardEls = Array.from(catsTrack.children);
 
-  let setWidth = 0; // width of one copy of the list
-  let step = 0; // one card + gap (cached to avoid per-frame style reads)
+  let setWidth = 0;
+  let step = 0;
 
   function measure() {
     const gap = parseFloat(getComputedStyle(catsTrack).columnGap) || 24;
     step = cardEls[0] ? cardEls[0].offsetWidth + gap : 0;
-    // One copy's stride = cards-per-copy * (card + gap). Using this exact value
-    // (not scrollWidth/COPIES) makes the loop jump land on the identical card.
+
     setWidth = cats.length * step;
-    catsTrack.scrollLeft = setWidth; // start in the middle copy
+    catsTrack.scrollLeft = setWidth;
     updateActive();
   }
 
-  // The middle of the 3 visible cards is the "active" purple one; it follows the
-  // scroll so each next card turns purple while the previous returns to grey.
-  // The tilt alternates (+/-1.41deg) on every real move.
   let activeCard = null;
   let tiltSign = 1;
 
   function updateActive(isWrap) {
     if (!step) return;
-    // Active = the card whose center is nearest the middle of the visible track.
-    // Deriving it from clientWidth (instead of a fixed +1 offset) keeps it correct
-    // for any number of visible cards — 3-up on desktop, ~1-up on mobile.
+
     const visibleCenter = catsTrack.scrollLeft + catsTrack.clientWidth / 2;
     const idx = Math.max(
       0,
@@ -283,8 +261,6 @@ if (catsTrack) {
     const target = cardEls[idx];
     if (target === activeCard) return;
 
-    // Alternate the tilt only on genuine moves (not the first one, not the
-    // invisible loop-jump between identical copies).
     if (activeCard && !isWrap) tiltSign = -tiltSign;
 
     if (activeCard) {
@@ -301,8 +277,6 @@ if (catsTrack) {
     activeCard = target;
   }
 
-  // Keep the scroll position within the middle copy. Jumping by exactly one
-  // copy-width is invisible because every copy is identical.
   function wrap() {
     if (!setWidth) return;
     let jumped = false;
@@ -316,13 +290,12 @@ if (catsTrack) {
       jumped = true;
     }
     if (jumped) {
-      updateActive(true); // move active to the identical copy without re-firing
-      void catsTrack.offsetWidth; // flush, then re-enable transitions
+      updateActive(true);
+      void catsTrack.offsetWidth;
       catsTrack.classList.remove("is-wrapping");
     }
   }
 
-  // --- Custom smooth scroll so we control when wrapping is safe ---
   let animating = false;
 
   function animateTo(target, duration = 450) {
@@ -356,7 +329,6 @@ if (catsTrack) {
   prevBtn.addEventListener("click", () => go(-1));
   nextBtn.addEventListener("click", () => go(1));
 
-  // --- Native drag / trackpad scroll: wrap once the user stops ---
   let idleTimer = null;
   catsTrack.addEventListener(
     "scroll",
@@ -372,8 +344,6 @@ if (catsTrack) {
   window.addEventListener("resize", measure);
   measure();
 }
-
-/* ===== FAQ accordion ===== */
 
 const faqItems = [
   {
@@ -433,7 +403,6 @@ if (faqList) {
     const head = item.querySelector(".faq__head");
     const panel = item.querySelector(".faq__panel");
 
-    // When fully open, drop the fixed max-height so content can reflow freely.
     panel.addEventListener("transitionend", (e) => {
       if (e.propertyName === "max-height" && item.classList.contains("is-open")) {
         panel.style.maxHeight = "none";
@@ -447,7 +416,7 @@ if (faqList) {
       if (isOpen) {
         panel.style.maxHeight = panel.scrollHeight + "px";
       } else {
-        // Animate from the current height down to 0.
+
         panel.style.maxHeight = panel.scrollHeight + "px";
         requestAnimationFrame(() => {
           panel.style.maxHeight = "0px";
@@ -456,8 +425,6 @@ if (faqList) {
     });
   });
 }
-
-/* ===== Merch grid ===== */
 
 const products = [
   { img: "./img/bracelet-1.png", name: "Кепка", price: "920 руб.", big: true },

@@ -1,9 +1,3 @@
-/* ===========================================================
-   Mobile adaptive — main page (index.html)
-   =========================================================== */
-
-/* Mobile nav popup opened by tapping the logo. Hidden by default everywhere;
-   only opened (via JS) on mobile, so it never shows on desktop. */
 .nav-popup {
   display: none;
   position: absolute;
@@ -35,7 +29,7 @@
 }
 
 @media (max-width: 600px) {
-  /* ---------- Header ---------- */
+
   .header {
     padding-top: 16px;
   }
@@ -59,19 +53,27 @@
   .logo__dot {
     width: 8px;
     height: 8px;
+    background: #0a0a0a;
   }
 
   .logo__text {
-    font-size: 20px;
+    display: none;
   }
 
-  /* Full nav doesn't fit on a phone — drop it down to just the logo. */
+  .logo::before,
+  .logo::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0a0a0a;
+  }
+
   .menu__list,
   .volunteer-button {
     display: none;
   }
 
-  /* ---------- Screen 1 / Hero ---------- */
   .hero {
     width: 92%;
     flex-direction: column;
@@ -97,7 +99,6 @@
     line-height: 1.45;
   }
 
-  /* Keep only the first sentence on mobile */
   .hero__text-extra {
     display: none;
   }
@@ -130,7 +131,6 @@
     height: 13px;
   }
 
-  /* ---------- Hero card ---------- */
   .card {
     width: 100%;
     height: auto;
@@ -145,7 +145,6 @@
     font-size: 124px;
   }
 
-  /* Badges (shared by hero card + info cards) */
   .card__badge {
     height: 34px;
     padding: 0 12px;
@@ -225,7 +224,6 @@
     height: 12px;
   }
 
-  /* ---------- Screen 2 / Explain ---------- */
   .explain {
     height: auto;
     flex-direction: column;
@@ -248,7 +246,6 @@
     border-radius: 26px;
   }
 
-  /* No decorative curves on mobile cards */
   .info-card__curve {
     display: none;
   }
@@ -262,14 +259,12 @@
     max-width: 88%;
   }
 
-  /* Fish pops out the top-right of the accent card */
   .info-card__fish {
     top: -46px;
     right: 16px;
     width: 96px;
   }
 
-  /* Badges overlap the bottom edge; light cards on the left, accent on the right */
   .info-card__badge--tr,
   .info-card__badge--bl {
     top: auto;
@@ -287,10 +282,6 @@
     left: auto;
   }
 
-  /* ---------- Screen 3 / Festival program ---------- */
-  /* No sticky pin / reserved height on mobile — the section is only as tall as
-     its content (so there's no empty gap). The scroll animation is driven from
-     each card's position via JS (closest card to the viewport center is active). */
   .program {
     min-height: 0;
   }
@@ -332,20 +323,22 @@
     gap: 14px;
   }
 
-  /* No changing cat card on mobile */
+  .program__events {
+    gap: 16px;
+  }
+
   .program-card {
     display: none;
   }
 
-  /* Card heights / gap stay the same as desktop (82 / 180 / 16) — the JS
-     positions the timeline dot from those exact values, so only the inner
-     spacing and type are restyled here. */
   .event-card {
+    height: 82px;
     padding: 22px 18px;
     border-radius: 26px;
   }
 
   .event-card.is-active {
+    height: 180px;
     border-radius: 26px;
   }
 
@@ -368,7 +361,6 @@
     font-size: 16px;
   }
 
-  /* ---------- Screen 4 / Cats ---------- */
   .cats__arrows {
     display: none;
   }
@@ -378,29 +370,61 @@
     line-height: 1.45;
   }
 
-  /* Card text is vw on desktop — restore readable sizes on mobile */
+  .cat-card__photo {
+    bottom: 15.4vw;
+  }
+
+  .cat-card {
+    padding: 4.1vw;
+  }
+
   .cat-card__badge {
-    font-size: 14px;
+    height: 8.7vw;
+    gap: 2vw;
+    padding: 0 3.6vw 0 1.5vw;
+    font-size: 3.6vw;
+  }
+
+  .cat-card__paw {
+    width: 6.7vw;
+    height: 6.7vw;
+  }
+
+  .cat-card__fav {
+    width: 10.3vw;
+    height: 10.3vw;
+  }
+
+  .cat-card__fav img {
+    width: 4.1vw;
+    height: 3.85vw;
+  }
+
+  .cat-card__plate {
+    gap: 2vw;
+    padding: 2vw 2vw 2vw 4.1vw;
+  }
+
+  .cat-card__heart {
+    width: 3.85vw;
+    height: 3.6vw;
   }
 
   .cat-card__name {
-    font-size: 18px;
+    font-size: 4.6vw;
   }
 
-  /* Hide the grey subtitle on mobile — it ran behind the button */
   .cat-card__desc {
     display: none;
   }
 
-  /* Slightly smaller button so the cat's name fits next to it */
   .cat-card__btn {
-    height: 44px;
-    padding: 0 14px;
-    gap: 6px;
-    font-size: 14px;
+    height: 11.3vw;
+    padding: 0 3.6vw;
+    gap: 1.5vw;
+    font-size: 3.6vw;
   }
 
-  /* ---------- Screen 5 / FAQ ---------- */
   .faq__fish {
     display: none;
   }
@@ -409,22 +433,18 @@
     font-size: 16px;
   }
 
-  /* ---------- Footer ---------- */
   .footer__badge {
     display: none;
   }
 
-  /* ---------- Games page ---------- */
   .games__fish {
     display: none;
   }
 
-  /* More leading so the highlight on the 2nd line doesn't touch the 1st line */
   .games__title {
     line-height: 1.25;
   }
 
-  /* ---------- Merch page ---------- */
   .merch__fish,
   .merch__fish-bottom {
     display: none;
@@ -434,24 +454,19 @@
     display: none;
   }
 
-  /* Taller hero (the "murr / мерч мероприятия" block) — shop grid below is
-     unchanged. */
   .merch__hero {
     height: auto;
     min-height: 80vh;
   }
 
-  /* Make the purple shop area a bit longer (more room below the cards) */
   .merch__shop {
     padding: 28px 0 64px;
   }
 
-  /* ---------- 404 page ---------- */
   .notfound__fish {
     display: none;
   }
 
-  /* Make both buttons the same width */
   .notfound__buttons {
     align-items: stretch;
     width: 100%;
@@ -464,7 +479,6 @@
     width: 100%;
   }
 
-  /* ---------- Space page / hero ---------- */
   .space-hero {
     flex-direction: column;
     align-items: stretch;
@@ -515,20 +529,16 @@
     width: 88%;
   }
 
-  /* No tilt on the video and location blocks on mobile */
   .space-video__frame,
   .space-loc-card {
     transform: none;
   }
 
-  /* Center location cards horizontally (and keep them within the screen).
-     Full-width columns so both cards reach the same max-width and match. */
   .space-locations__col {
     width: 100%;
     align-items: center;
   }
 
-  /* Both location texts flush to the left edge (cards stay centered) */
   .space-locations__text {
     align-self: flex-start;
     text-align: left;
@@ -546,10 +556,6 @@
   }
 }
 
-/* ===========================================================
-   Tablet — keep the two-column locations layout
-   (location 1 + text left, location 2 + text right & lower)
-   =========================================================== */
 @media (min-width: 601px) and (max-width: 768px) {
   .space-locations {
     flex-direction: row;
@@ -561,7 +567,6 @@
     flex: 0 0 46%;
   }
 
-  /* Right column (location 2 + its text) sits a bit lower */
   .space-locations__col--right {
     margin-top: 14vw;
   }
@@ -572,5 +577,29 @@
     max-width: 356px;
     height: auto;
     aspect-ratio: 356 / 335;
+  }
+}
+
+@media (max-width: 1024px) {
+  .program {
+    min-height: 0;
+  }
+
+  .program__sticky {
+    position: static;
+    min-height: 0;
+    display: block;
+  }
+
+  .program__events {
+    gap: 16px;
+  }
+
+  .event-card {
+    height: 82px;
+  }
+
+  .event-card.is-active {
+    height: 180px;
   }
 }
