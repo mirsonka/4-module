@@ -2680,8 +2680,6 @@ body {
   color: #c4c4c5;
 }
 
-/* --- Adaptive --- */
-
 @media (max-width: 768px) {
   .space {
     width: 90vw;
@@ -2836,8 +2834,6 @@ body {
   }
 }
 
-/* ===== Magazine page ===== */
-
 .magazine {
   width: 89.1667vw;
   margin: 0 auto;
@@ -2918,8 +2914,6 @@ body {
   user-select: none;
   animation: fish-sway 5s ease-in-out infinite;
 }
-
-/* --- Magazine board --- */
 
 .mag-board-wrap {
   position: relative;
@@ -3057,8 +3051,6 @@ body {
   user-select: none;
 }
 
-/* --- Magazine footer extra --- */
-
 .mag-footer__top {
   position: relative;
 }
@@ -3073,8 +3065,6 @@ body {
   pointer-events: none;
   user-select: none;
 }
-
-/* --- Adaptive --- */
 
 @media (max-width: 768px) {
   .magazine {
