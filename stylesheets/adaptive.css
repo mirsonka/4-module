@@ -378,6 +378,23 @@
     line-height: 1.45;
   }
 
+  /* Card text is vw on desktop — restore readable sizes on mobile */
+  .cat-card__badge {
+    font-size: 14px;
+  }
+
+  .cat-card__name {
+    font-size: 18px;
+  }
+
+  .cat-card__desc {
+    font-size: 14px;
+  }
+
+  .cat-card__btn {
+    font-size: 15px;
+  }
+
   /* ---------- Screen 5 / FAQ ---------- */
   .faq__fish {
     display: none;
