@@ -521,9 +521,17 @@
     transform: none;
   }
 
-  /* Center location cards horizontally (and keep them within the screen) */
+  /* Center location cards horizontally (and keep them within the screen).
+     Full-width columns so both cards reach the same max-width and match. */
   .space-locations__col {
+    width: 100%;
     align-items: center;
+  }
+
+  /* Both location texts flush to the left edge (cards stay centered) */
+  .space-locations__text {
+    align-self: flex-start;
+    text-align: left;
   }
 
   .space-loc-card,
